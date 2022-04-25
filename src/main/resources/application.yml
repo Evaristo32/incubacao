@@ -1,0 +1,23 @@
+server:
+  port: ${PORT:8080}
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: zmlglbamdngplz
+    password: 4783d38f304c96c5829e83bff25034b9f50fb5c4e070c7e28a1487434b9acb6f
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate.show_sql: true
+      hibernate.use_sql_comments: true
+      hibernate.format_sql: true
+      hibernate.type: trace
+      hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
+      hibernate:
+        temp:
+          use_jdbc_metadata_defaults: false
