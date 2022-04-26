@@ -1,11 +1,11 @@
 server:
-  port: ${PORT:8080}
+  port: ${PORT:8085}
 
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/postgres
-    username: zmlglbamdngplz
-    password: 4783d38f304c96c5829e83bff25034b9f50fb5c4e070c7e28a1487434b9acb6f
+    url: jdbc:postgresql://localhost:5433/incubacaoDB
+    username: incubacao
+    password: incubacao2022
     driver-class-name: org.postgresql.Driver
   jpa:
     database: POSTGRESQL
@@ -21,3 +21,8 @@ spring:
       hibernate:
         temp:
           use_jdbc_metadata_defaults: false
+
+
+springdoc:
+  api-docs:
+    path: /openapi
