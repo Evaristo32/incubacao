@@ -3,15 +3,15 @@ server:
 
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5433/d3ohducb5nnrcq
-    username: wrxiqiyusycykm
-    password: 7ce2cb2ab00a296506a2b28529bc679cec783e8f6a71977ed993d18380882b90
+    url: jdbc:postgresql://ec2-54-80-123-146.compute-1.amazonaws.com:5432/dfur38umtuqqeh
+    username: lzntcqzyodjoec
+    password: 8405b2192a50242fcbf50028bc712ea535baf2727bae1debd74b9efa27dc8ef1
     driver-class-name: org.postgresql.Driver
   jpa:
     database: POSTGRESQL
     show-sql: true
     hibernate:
-      ddl-auto: create
+      ddl-auto: none
     properties:
       hibernate.show_sql: true
       hibernate.use_sql_comments: true
