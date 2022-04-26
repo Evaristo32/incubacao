@@ -1,17 +1,17 @@
 server:
-  port: ${PORT:8080}
+  port: ${PORT:8085}
 
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5433/d3ohducb5nnrcq
-    username: wrxiqiyusycykm
-    password: 7ce2cb2ab00a296506a2b28529bc679cec783e8f6a71977ed993d18380882b90
+    url: jdbc:postgresql://localhost:5433/incubacaoDB
+    username: incubacao
+    password: incubacao2022
     driver-class-name: org.postgresql.Driver
   jpa:
     database: POSTGRESQL
     show-sql: true
     hibernate:
-      ddl-auto: create
+      ddl-auto: none
     properties:
       hibernate.show_sql: true
       hibernate.use_sql_comments: true
