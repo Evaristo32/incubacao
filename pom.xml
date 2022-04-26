@@ -16,7 +16,7 @@
     <properties>
         <java.version>11</java.version>
         <lombok>1.18.24</lombok>
-        <maven.compiler>3.5.1</maven.compiler>
+        <maven.compiler>3.8.1</maven.compiler>
     </properties>
     <dependencies>
 
