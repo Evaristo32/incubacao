@@ -1,12 +1,10 @@
 package br.com.incubacao.projection;
 
-public interface ChocadeiraProjection {
+public interface RacaProjection {
 
     Long getId();
 
-    String getMarca();
+    String getNome();
 
-    String getCodigo();
-
-    Integer getCapacidadeTotal();
+    String getDescricao();
 }
