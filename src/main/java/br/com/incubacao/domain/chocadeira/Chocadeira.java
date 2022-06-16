@@ -4,14 +4,16 @@ package br.com.incubacao.domain.chocadeira;
 import lombok.Getter;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Getter
 @Entity
 @Table(name = Chocadeira.TABELA, schema = "incubacao")
-public class Chocadeira {
+public class Chocadeira implements Serializable {
 
     protected static final String TABELA = "tb_chocadeira";
     public static final String FK = "chocadeira_id";
+    private static final long serialVersionUID = -3806664269007549862L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "incubacao.sq_chocadeira")
@@ -46,8 +48,4 @@ public class Chocadeira {
         this.capacidadeTotal = build.capacidadeTotal;
     }
 
-    public Chocadeira(AlterarChocadeiraBuild build) {
-        this.marca = build.marca;
-        this.capacidadeTotal = build.capacidadeTotal;
-    }
 }
