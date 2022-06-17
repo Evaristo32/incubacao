@@ -13,6 +13,6 @@ import java.util.List;
 @Transactional(readOnly = true)
 public interface RacaRepository extends JpaRepository<Raca, Long> {
 
-    @Query(value = "select r.id, r.nome, r.descricao from Raca r")
+    @Query(value = "select r.id as id, r.nome as nome, r.descricao as descricao from Raca r")
     List<RacaProjection> getAll();
 }
