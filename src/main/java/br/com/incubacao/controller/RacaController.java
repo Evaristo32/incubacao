@@ -35,4 +35,10 @@ public class RacaController {
         return ResponseEntity.ok(racaService.findById(id));
     }
 
+    @DeleteMapping(path = "{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Void> delete(@PathVariable Long id) {
+        racaService.delete(id);
+        return ResponseEntity.ok().build();
+    }
+
 }

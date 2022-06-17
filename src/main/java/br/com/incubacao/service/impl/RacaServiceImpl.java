@@ -37,4 +37,9 @@ public class RacaServiceImpl implements RacaService {
     public Raca findById(Long id) {
         return repository.findById(id).get();
     }
+
+    @Override
+    public void delete(Long id) {
+        repository.deleteById(id);
+    }
 }

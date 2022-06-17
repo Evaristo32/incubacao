@@ -13,4 +13,6 @@ public interface RacaService {
     List<RacaProjection> getAll();
 
     Raca findById(Long id);
+
+    void delete(Long id);
 }
