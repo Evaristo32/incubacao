@@ -32,4 +32,9 @@ public class RacaServiceImpl implements RacaService {
     public List<RacaProjection> getAll() {
         return repository.getAll();
     }
+
+    @Override
+    public Raca findById(Long id) {
+        return repository.findById(id).get();
+    }
 }

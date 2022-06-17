@@ -1,6 +1,7 @@
 package br.com.incubacao.controller;
 
 
+import br.com.incubacao.domain.raca.Raca;
 import br.com.incubacao.dto.raca.CadastroRaca;
 import br.com.incubacao.projection.RacaProjection;
 import br.com.incubacao.service.RacaService;
@@ -26,6 +27,12 @@ public class RacaController {
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<RacaProjection>> getAll() {
         return ResponseEntity.ok(racaService.getAll());
+    }
+
+
+    @GetMapping(path = "{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Raca> findById(@PathVariable Long id) {
+        return ResponseEntity.ok(racaService.findById(id));
     }
 
 }
