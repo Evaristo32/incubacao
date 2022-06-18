@@ -3,6 +3,7 @@ package br.com.incubacao.controller;
 import br.com.incubacao.dto.incubacao.CadastroIncubacaoDto;
 import br.com.incubacao.service.IncubacaoService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -16,7 +17,7 @@ public class IncubacaoController {
 
     private final IncubacaoService service;
 
-    @PostMapping(path = "cadastrar", consumes = "application/json")
+    @PostMapping(path = "cadastrar", consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Long> cadastrar(@RequestBody CadastroIncubacaoDto dto) {
         return ResponseEntity.ok(service.cadastrar(dto));
     }

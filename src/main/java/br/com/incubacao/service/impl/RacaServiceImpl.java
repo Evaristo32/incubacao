@@ -1,7 +1,8 @@
 package br.com.incubacao.service.impl;
 
 import br.com.incubacao.domain.raca.Raca;
-import br.com.incubacao.dto.raca.CadastroRaca;
+import br.com.incubacao.dto.raca.AlterarRacaDto;
+import br.com.incubacao.dto.raca.CadastroRacaDto;
 import br.com.incubacao.projection.RacaProjection;
 import br.com.incubacao.repository.RacaRepository;
 import br.com.incubacao.service.RacaService;
@@ -17,7 +18,7 @@ public class RacaServiceImpl implements RacaService {
     private final RacaRepository repository;
 
     @Override
-    public Long cadastrar(CadastroRaca dto) {
+    public Long cadastrar(CadastroRacaDto dto) {
 
         Raca build = Raca.builder()
                 .nome(dto.getNome())
@@ -25,6 +26,14 @@ public class RacaServiceImpl implements RacaService {
                 .build();
 
         Raca raca = repository.save(build);
+        return raca.getId();
+    }
+
+    @Override
+    public Long update(AlterarRacaDto dto) {
+        Raca raca = repository.findById(dto.getId()).get();
+        raca.alterar().nome(dto.getNome()).descricao(dto.getDescricao()).aplicar();
+        repository.save(raca);
         return raca.getId();
     }
 

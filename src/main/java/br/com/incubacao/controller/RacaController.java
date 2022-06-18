@@ -2,7 +2,9 @@ package br.com.incubacao.controller;
 
 
 import br.com.incubacao.domain.raca.Raca;
-import br.com.incubacao.dto.raca.CadastroRaca;
+import br.com.incubacao.dto.chocadeira.AlterarChocadeiraDto;
+import br.com.incubacao.dto.raca.AlterarRacaDto;
+import br.com.incubacao.dto.raca.CadastroRacaDto;
 import br.com.incubacao.projection.RacaProjection;
 import br.com.incubacao.service.RacaService;
 import lombok.RequiredArgsConstructor;
@@ -20,8 +22,13 @@ public class RacaController {
     private final RacaService racaService;
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Long> cadastrar(@RequestBody CadastroRaca dto) {
+    public ResponseEntity<Long> cadastrar(@RequestBody CadastroRacaDto dto) {
         return ResponseEntity.ok(racaService.cadastrar(dto));
+    }
+
+    @PutMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Long> update(@RequestBody AlterarRacaDto dto) {
+        return ResponseEntity.ok(racaService.update(dto));
     }
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)

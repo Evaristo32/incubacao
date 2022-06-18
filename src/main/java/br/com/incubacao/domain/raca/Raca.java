@@ -34,4 +34,13 @@ public class Raca implements Serializable {
         this.nome = build.nome;
         this.descricao = build.descricao;
     }
+
+    public AlterarRacaBuild alterar() {
+        return new AlterarRacaBuild(
+                form -> {
+                    this.nome = form.nome;
+                    this.descricao = form.descricao;
+                }
+        );
+    }
 }
