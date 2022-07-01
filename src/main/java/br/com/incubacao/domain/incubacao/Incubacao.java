@@ -30,7 +30,7 @@ public class Incubacao implements Serializable {
 
     private ZonedDateTime fim;
 
-    private ZonedDateTime dataOvoscopia;
+    private ZonedDateTime ovoscopia;
 
     @JoinColumn(name = Chocadeira.FK)
     @OneToOne(cascade = CascadeType.PERSIST)
@@ -45,7 +45,7 @@ public class Incubacao implements Serializable {
         this.itens = build.itens;
         this.inicio = build.inicio;
         this.fim = build.fim;
-        this.dataOvoscopia = build.dataOvoscopia;
+        this.ovoscopia = build.dataOvoscopia;
         this.chocadeira = build.chocadeira;
     }
 

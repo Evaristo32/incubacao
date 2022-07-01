@@ -10,7 +10,7 @@ public class CadastroIncubacaoDto {
 
     private Long idChocadeira;
 
-    private ZonedDateTime datInicioIncubacao;
+    private ZonedDateTime inicio;
 
     List<ItensIncubacaoDto> itens;
 

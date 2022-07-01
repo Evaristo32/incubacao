@@ -7,6 +7,6 @@ public class ItensIncubacaoDto {
 
     private Long idRaca;
 
-    private Integer quantidadeOvosIncubados;
+    private Integer quantidade;
 
 }

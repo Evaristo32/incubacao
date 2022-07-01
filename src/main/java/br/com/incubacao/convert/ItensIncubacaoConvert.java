@@ -9,7 +9,7 @@ public class ItensIncubacaoConvert {
     public static ItensIncubacao covert(ItensIncubacaoDto dto) {
         return ItensIncubacao.builder()
                 .raca(Raca.builder().id(dto.getIdRaca()).build())
-                .quantidadeOvosIncubados(dto.getQuantidadeOvosIncubados())
+                .quantidadeOvosIncubados(dto.getQuantidade())
                 .build();
     }
 

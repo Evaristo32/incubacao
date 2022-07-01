@@ -17,15 +17,21 @@ import java.util.stream.Collectors;
 @Service
 public class IncubacaoServiceImpl implements IncubacaoService {
 
+    final int CICLO_DE_INCUBACAO = 21;
+    final int PERIODO_PARA_OVOSCOPIA = 8;
+
     private final IncubacaoRepository repository;
 
     @Override
     public Long cadastrar(CadastroIncubacaoDto dto) {
+
         List<ItensIncubacao> itens = dto.getItens().stream().map(itensDto -> ItensIncubacaoConvert.covert(itensDto)).collect(Collectors.toList());
 
         Incubacao incubacao = Incubacao.builder()
                 .chocadeira(Chocadeira.builder().id(dto.getIdChocadeira()).build())
-                .inicio(dto.getDatInicioIncubacao())
+                .inicio(dto.getInicio())
+                .fim(dto.getInicio().plusDays(CICLO_DE_INCUBACAO))
+                .dataOvoscopia(dto.getInicio().plusDays(PERIODO_PARA_OVOSCOPIA))
                 .itens(itens)
                 .build();
 
