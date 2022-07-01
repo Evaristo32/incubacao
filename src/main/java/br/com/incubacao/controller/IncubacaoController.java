@@ -17,7 +17,7 @@ public class IncubacaoController {
 
     private final IncubacaoService service;
 
-    @PostMapping(path = "cadastrar", consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Long> cadastrar(@RequestBody CadastroIncubacaoDto dto) {
         return ResponseEntity.ok(service.cadastrar(dto));
     }
