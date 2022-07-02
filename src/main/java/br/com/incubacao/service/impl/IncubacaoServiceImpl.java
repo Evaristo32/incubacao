@@ -38,4 +38,8 @@ public class IncubacaoServiceImpl implements IncubacaoService {
         return repository.save(incubacao).getId();
     }
 
+    @Override
+    public List<Incubacao> findAll() {
+        return repository.findAll();
+    }
 }
